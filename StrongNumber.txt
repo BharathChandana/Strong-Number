@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StrongNumber
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num, rem, sum = 0, temp;
+            Console.WriteLine("Enter a number");
+            num=Convert.ToInt32(Console.ReadLine());
+            temp = num;
+            while(num > 0)
+            {
+                rem = num % 10;
+                int fact = 1;
+                for(int i=1;i<=rem;i++)
+                {
+                    fact = fact * i;
+                }
+                sum=sum + fact;
+                num = num / 10;
+            }
+            if(sum==temp)
+            {
+                Console.WriteLine("It is a Strong Number");
+            }
+            else
+            {
+                
+                    Console.WriteLine("Not a Strong Number");
+                
+            }
+            Console.ReadKey();
+        }
+    }
+}
